@@ -28,4 +28,18 @@
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SparkNest_Agentforce_Enquiry_Read_Access</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>SparkNest Agentforce Enquiry Read Access</label>
+        <sharedTo>
+            <group>SparkNest_Agentforce_Enquiry_Readers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Share_with_Agentforce__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
 </SharingRules>
