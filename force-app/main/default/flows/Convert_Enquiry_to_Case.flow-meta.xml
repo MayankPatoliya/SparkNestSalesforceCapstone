@@ -131,6 +131,9 @@
         <connector>
             <targetReference>Close_Enquiry</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Case_Creation_Error</targetReference>
+        </faultConnector>
         <inputAssignments>
             <field>ContactId</field>
             <value>
@@ -184,6 +187,9 @@
         <connector>
             <targetReference>Close_Enquiry</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Product_Case_Creation_Error</targetReference>
+        </faultConnector>
         <inputAssignments>
             <field>ContactId</field>
             <value>
@@ -321,6 +327,9 @@
         <connector>
             <targetReference>Get_Created_Case_Details</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Enquiry_Close_Error</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -348,6 +357,30 @@
         <fields>
             <name>CaseConfirmationMessage</name>
             <fieldText>&lt;p&gt;Your enquiry has been converted successfully. Case Number:&amp;nbsp;{!Get_Created_Case_Details.CaseNumber}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Case_Creation_Error</name>
+        <label>Case Creation Error</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Case_Creation_Error_Message</name>
+            <fieldText>&lt;p&gt;We couldn&apos;t create the case for this enquiry. Please try again. If the problem continues, contact the SparkNest support team.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -408,6 +441,54 @@
             <fieldType>LargeTextArea</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Enquiry_Close_Error</name>
+        <label>Enquiry Close Error</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Enquiry_Close_Error_Message</name>
+            <fieldText>&lt;p&gt;The case was created, but we couldn&apos;t update the enquiry status. Please contact the SparkNest support team so they can check the enquiry.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Product_Case_Creation_Error</name>
+        <label>Product Case Creation Error</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Product_Case_Creation_Error_Message</name>
+            <fieldText>&lt;p&gt;We couldn&apos;t create the case for this enquiry. Please try again. If the problem continues, contact the SparkNest support team.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
